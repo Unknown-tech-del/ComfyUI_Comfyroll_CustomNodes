@@ -8,7 +8,6 @@ import sys
 import comfy.controlnet
 import comfy.sd
 import folder_paths
-from nodes import ControlNetApplyAdvanced
 from ..categories import icons
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "comfy"))
@@ -148,6 +147,7 @@ class CR_ApplyControlNetStack:
             return (base_positive, base_negative, show_help, )
     
         if controlnet_stack is not None:
+            from nodes import ControlNetApplyAdvanced
             for controlnet_tuple in controlnet_stack:
                 controlnet_name, image, strength, start_percent, end_percent  = controlnet_tuple
                 
