@@ -1,3 +1,5 @@
+import traceback
+
 try:
     from .nodes.nodes_core import *
     from .nodes.nodes_aspect_ratio import *
@@ -10,8 +12,9 @@ try:
     from .nodes.nodes_upscale import *
     from .nodes.nodes_xygrid import *
     from .nodes.nodes_legacy import *
-except ImportError:
+except Exception as e:
     print("\033[34mComfyroll Studio: \033[92mFailed to load Essential nodes\033[0m")
+    traceback.print_exc()
 
 try:
     from .nodes.nodes_graphics_matplot import *
@@ -20,8 +23,9 @@ try:
     from .nodes.nodes_graphics_filter import *
     from .nodes.nodes_graphics_template import *
     from .nodes.nodes_graphics_pattern import *
-except ImportError:
+except Exception as e:
     print("\033[34mComfyroll Studio: \033[92mFailed to load Graphics nodes\033[0m")
+    traceback.print_exc()
 
 try:
     from .nodes.nodes_animation_interpolation import *
@@ -32,8 +36,9 @@ try:
     from .nodes.nodes_animation_lists import *
     from .nodes.nodes_animation_utils import *
     from .nodes.nodes_animation_cyclers import *
-except ImportError:
+except Exception as e:
     print("\033[34mComfyroll Studio: \033[92mFailed to load Animation nodes\033[0m")
+    traceback.print_exc()
     
 try:
     from .nodes.nodes_utils_logic import *
@@ -42,8 +47,9 @@ try:
     from .nodes.nodes_utils_random import *
     from .nodes.nodes_utils_text import *
     from .nodes.nodes_utils_other import *
-except ImportError:
+except Exception as e:
     print("\033[34mComfyroll Studio: \033[92mFailed to load Utility nodes\033[0m")
+    traceback.print_exc()
 
 NODE_CLASS_MAPPINGS = { 
     ### Core Nodes
