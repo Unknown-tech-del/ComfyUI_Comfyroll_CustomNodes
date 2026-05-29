@@ -16,7 +16,6 @@ import json
 import csv
 from typing import List
 from PIL.PngImagePlugin import PngInfo
-from nodes import SaveImage
 import glob
 from ..categories import icons
 
