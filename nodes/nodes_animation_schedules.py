@@ -7,7 +7,6 @@ import comfy.sd
 import os
 import sys
 import folder_paths
-from nodes import LoraLoader
 from .functions_animation import keyframe_scheduler, prompt_scheduler
 from ..categories import icons
 
