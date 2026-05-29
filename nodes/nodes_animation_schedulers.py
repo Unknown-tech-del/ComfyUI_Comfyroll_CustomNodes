@@ -7,7 +7,6 @@ import comfy.sd
 import os
 import sys
 import folder_paths
-from nodes import LoraLoader
 from .functions_animation import keyframe_scheduler, prompt_scheduler
 from ..categories import icons
 
@@ -445,6 +444,7 @@ class CR_LoadScheduledLoRAs:
     def schedule(self, mode, model, clip, current_frame, schedule_alias, default_lora, strength_model, strength_clip, schedule_format, lora_list=None, schedule=None):
         show_help = "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki/Scheduler-Nodes#cr-load-scheduled-loras"
         #lora_name = ""
+        from nodes import LoraLoader
 
         # Off mode
         if mode == "Off":
