@@ -9,7 +9,6 @@ from PIL import Image, ImageEnhance
 import os
 import sys
 import folder_paths
-from nodes import MAX_RESOLUTION, ControlNetApply
 from ..categories import icons
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.realpath(__file__)), "comfy"))
@@ -103,6 +102,10 @@ class CR_SDXLStyleText:
 class CR_SDXLBasePromptEncoder:
     @classmethod
     def INPUT_TYPES(s):
+        try:
+            from nodes import MAX_RESOLUTION
+        except ImportError:
+            MAX_RESOLUTION = 16384
         return {"required": {
                     "base_clip": ("CLIP", ),
                     "pos_g": ("STRING", {"multiline": True, "default": "POS_G"}),
